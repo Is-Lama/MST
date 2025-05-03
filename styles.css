@@ -27,13 +27,12 @@
 }
 
 body {
-  max-width: 1920px;
   margin: auto;
+  max-width: 1920px;  
   padding: 0 15px;
   font-family: var(--font-family-base);
   font-size: 24px;
-  color: var(--color-light);
-  /* background-color: black; */
+  color: var(--color-light);  
 }
 
 a,
@@ -67,8 +66,8 @@ a:hover {
 }
 
 .wrapper {
-  position: relative;           /* Создаем область отсчета для header */
-  width: 100%;                  /* Растягиваем на всю ширину окна */
+  position: relative;  
+  width: 100%;  
 }
 
 /* Header  */
@@ -81,12 +80,12 @@ a:hover {
   z-index: 2;
   max-width: 1920px;
   background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.2s ease-in-out;  
+  transition: background-color 0.2s ease-in-out;
 }
 
 .scrolled-header {
   background-color: rgba(0, 0, 0, 0.8);
-  position: sticky;                      
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -180,13 +179,13 @@ a:hover {
 
 .hero-banner {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .hero-banner-img {
   width: min(39.74vw, 763px);
   height: min(52.55vw, 1009px);
-  background: url('./images/hero1.jpg') center/cover no-repeat;
+  background: url('./images/hero2.jpeg') center/cover no-repeat;
 }
 
 .hero-button {
@@ -194,35 +193,34 @@ a:hover {
   padding: clamp(18px, 2.08vw, 40px) clamp(22px, 2.60vw, 50px);
   font-size: clamp(14px, 1.25vw, 24px);
   line-height: 1.3;
-  initial-letter: 0.04em;
+  letter-spacing: 0.04em;
 }
 
 /* Benefits  */
 
 .benefits {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  column-gap: 50px;
   padding-top: 100px;
+  column-gap: 50px;
   background-color: var(--color-dark-gray);
 }
 
-.benefits-list {
-  flex: 1 0 27%;
-  align-self: flex-end;
+.benefits-img-left,
+.benefits-img-right {
+  width: 662px;
+  max-width: 662px;
 }
 
-.benefits-img-wrap {
-  flex: 1 0 33%;
-  display: flex;
-  flex-direction: column;
-
+.benefits-img-left {
+  background: url("./images/benefits11.jpeg") center/cover no-repeat;
 }
 
-.benefits-img {
-  margin-top: auto;
-  width: clamp(300px, 32.4vw, 622px);
+.benefits-img-right {
+  background: url("./images/benefits22.jpeg") center/cover no-repeat;
+}
+
+.benefits-content {
+  width: 676px;
 }
 
 .benefits-item {
@@ -230,8 +228,7 @@ a:hover {
   display: flex;
   align-items: center;
   column-gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-block: 40px;  
   padding-left: 80px;
   font-size: clamp(16px, 1.25vw, 24px);
   line-height: 1.3;
@@ -260,7 +257,6 @@ a:hover {
 }
 
 .benefits-button {
-  /* margin-top: 30px; */
   width: 100%;
   padding-block: clamp(15px, 1.56vw, 30px);
   font-size: clamp(14px, 1.04vw, 20px);
@@ -394,14 +390,14 @@ a:hover {
   background-position: center;
 }
 
-.form-button {
-  background-color: var(--color-dark-gray);
-  padding: clamp(12px, 2.08vw, 40px) clamp(22px, 2.60vw, 50px);
-  color: var(--color-light);
+.form-button {  
+  padding: clamp(12px, 2.08vw, 40px) clamp(22px, 2.60vw, 50px);  
   font-size: clamp(12px, 1.25vw, 24px);
   font-weight: 400;
   line-height: 1.3;
-  initial-letter: 0.04em;
+  letter-spacing: 0.04em;
+  color: var(--color-light);
+  background-color: var(--color-dark-gray);
   transition: background-color var(--transition-duration) ease-in-out;
 }
 
@@ -558,7 +554,7 @@ a:hover {
     column-gap: 50px;
   }
 
-  .hero-content {    
+  .hero-content {
     padding-bottom: 30px;
   }
 
@@ -613,13 +609,16 @@ a:hover {
   @media(max-width: 1280px) {
     .hero-description {
       margin-bottom: 20px;
-    } 
+    }
+
     .hero-item:not(:last-child) {
       margin-bottom: 15px;
     }
+
     .hero-content {
       padding-top: 120px;
     }
+
     .contacts {
       padding-left: 100px;
       padding-block: 60px;
@@ -668,6 +667,7 @@ a:hover {
     .benefits {
       column-gap: 30px;
       padding-block: 40px;
+      padding-inline: 80px;
     }
 
     .benefits-item {
@@ -682,6 +682,14 @@ a:hover {
 
     .benefits-item:first-child::before {
       top: 5px;
+    }
+
+    .benefits-img-left {
+      background: url("./images/benefits.jpeg") center/cover no-repeat;
+    }
+
+    .benefits-img-right {
+      display: none;
     }
 
     .contacts {
@@ -787,10 +795,10 @@ a:hover {
 
     .hero-content {
       padding-top: 120px;
-      padding-inline:  80px;
+      padding-inline: 80px;
     }
 
-    .hero-heading {      
+    .hero-heading {
       width: 100%;
     }
 
@@ -812,16 +820,9 @@ a:hover {
       row-gap: 40px;
     }
 
-    .benefits-img-wrap {
-      display: flex;
-    }
-
-    .benefits-img-left {
-      margin-right: auto;
-    }
-
+    .benefits-img-left,
     .benefits-img-right {
-      margin-left: auto;
+      display: none;
     }
 
     .benefits-content {
@@ -915,7 +916,7 @@ a:hover {
     .footer-bottom {
       display: grid;
       padding-inline: 70px;
-      height: 200px;      
+      height: 200px;
       grid-template-areas:
         "left right"
         "center center";
@@ -933,10 +934,10 @@ a:hover {
 
     .footer-center {
       grid-area: center;
-      row-gap: 10px;      
+      row-gap: 10px;
     }
 
-    .footer-social-list {      
+    .footer-social-list {
       column-gap: 26px;
     }
   }
@@ -1006,10 +1007,12 @@ a:hover {
       width: 12px;
       height: 12px;
     }
+
     .footer-bottom {
       padding-inline: 50px;
     }
-    .footer-social-list {      
+
+    .footer-social-list {
       column-gap: 16px;
     }
   }
@@ -1029,11 +1032,11 @@ a:hover {
       padding-inline: 30px;
     }
 
-    .hero-heading {      
+    .hero-heading {
       font-size: 24px;
     }
 
-    .hero-description {      
+    .hero-description {
       font-size: 16px;
     }
 
@@ -1058,8 +1061,7 @@ a:hover {
     }
 
     .benefits-item {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-block: 15px;      
       padding-left: 30px;
       font-size: 14px;
     }
@@ -1075,6 +1077,7 @@ a:hover {
     .contacts {
       padding: 20px;
     }
+
     .footer-bottom {
       display: flex;
       flex-direction: column;
@@ -1086,9 +1089,9 @@ a:hover {
       align-items: center;
       row-gap: 5px;
     }
-    .footer-right {      
+
+    .footer-right {
       row-gap: 5px;
     }
-
   }
 }
